@@ -9,15 +9,17 @@
 int check_cycle(listint_t *list)
 {
 listint_t *cursor = list;
+listint_t *cursor_slow = list;
 if (list == NULL)
 return (0);
 while (1)
 {
-if(cursor->next != NULL)
+if(cursor->next != NULL && cursor->next->next != NULL)
 {
-if (cursor->next == list)
+cursor = cursor->next->next;
+cursor_slow = cursor_slow->next;
+if (cursor == cursor_slow)
 return (1);
-cursor = cursor->next;
 }
 else
 return (0);
