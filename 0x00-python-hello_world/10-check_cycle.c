@@ -11,11 +11,15 @@ int check_cycle(listint_t *list)
 listint_t *cursor = list;
 if (list == NULL)
 return (0);
-while (cursor->next != NULL)
+while (1)
+{
+if(cursor->next != NULL)
 {
 if (cursor->next == list)
 return (1);
 cursor = cursor->next;
 }
+else
 return (0);
+}
 }
