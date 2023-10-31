@@ -5,4 +5,3 @@ for tens in range(0, 10):
             print("{:d}{:d}".format(tens, ones), end=", ")
         else:
             print("{:d}{:d}".format(tens, ones))
-    
