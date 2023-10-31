@@ -13,6 +13,7 @@ new->next = NULL;
 if (*head == NULL)
 {
 *head = new;
+(*head)->next = NULL;
 return (new);
 }
 if ((*head)->next == NULL)
@@ -27,7 +28,6 @@ new->next = *head;
 return (new);
 }
 current = *head;
-while (current != NULL)
 while (current->next != NULL)
 {
 if (new->n < current->n)
@@ -36,6 +36,7 @@ new->next = current;
 *head = new;
 return (new);
 }
+
 if (((new->n > current->n) && (new->n < (current->next)->n)) ||
 (new->n == current->n))
 {
