@@ -6,8 +6,9 @@
  */
 int is_palindrome(listint_t **head)
 {
-listint_t *current = *head, *reverse = *head;
+listint_t *current = *head;
 int i = 0, j = 0;
+int* data;
 if (head == NULL) 
 return (0);
 if (*head == NULL) 
@@ -19,20 +20,24 @@ current = current->next;
 }
 if (i == 1)
 return (1);
+data = malloc(sizeof(int) * i);
+if (data == NULL)
+return (0);
 current = *head;
 while (current != NULL)
 {
-for (j = 0; j < i - 1; j++)
-{
-reverse = reverse->next;
+data[j] = current->n;
+j++;
+current = current->next;
 }
-if (current->n != reverse->n)
+for (j = 0; j <= (i / 2); j++)
 {
+if (data[j] != data[i - 1 -j])
+{
+free (data);
 return (0);
 }
-current = current->next;
-reverse = *head;
-i--;
 }
+free (data);
 return (1);
 }
