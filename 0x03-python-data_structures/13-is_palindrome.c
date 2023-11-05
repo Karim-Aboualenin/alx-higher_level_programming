@@ -8,7 +8,7 @@ int is_palindrome(listint_t **head)
 {
 listint_t *current = *head;
 int i = 0, j = 0;
-int* data;
+int data[10000];
 if (head == NULL) 
 return (0);
 if (*head == NULL) 
@@ -20,9 +20,6 @@ current = current->next;
 }
 if (i == 1)
 return (1);
-data = malloc(sizeof(int) * i);
-if (data == NULL)
-return (0);
 current = *head;
 while (current != NULL)
 {
@@ -33,11 +30,7 @@ current = current->next;
 for (j = 0; j <= (i / 2); j++)
 {
 if (data[j] != data[i - 1 -j])
-{
-free (data);
 return (0);
 }
-}
-free (data);
 return (1);
 }
