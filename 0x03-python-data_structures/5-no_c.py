@@ -1,2 +1,9 @@
+#!/usr/bin/python3
 def no_c(my_string):
-    return ("".join(c for c in my_string if c not in "Cc"))
+    new = ""
+    for i in my_string:
+        if i == 'c' or i == 'C':
+            continue
+        else:
+            new += i
+    return new
