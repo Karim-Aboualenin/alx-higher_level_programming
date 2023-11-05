@@ -1,6 +1,2 @@
 def no_c(my_string):
-    new = ''
-    for i in my_string:
-        if i != 'c' and i != 'C':
-            new += i
-    return new
+    return ("".join(c for c in my_string if c not in "Cc"))
