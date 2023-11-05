@@ -1,1 +1,1 @@
-max_value
+#!/usr/bin/python3
