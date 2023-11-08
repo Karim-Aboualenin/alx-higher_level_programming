@@ -1,1 +1,1 @@
-print(matrix)
+#!/usr/bin/python3
