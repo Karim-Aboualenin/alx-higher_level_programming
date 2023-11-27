@@ -1,1 +1,1 @@
-nb_print
+has_been_print
